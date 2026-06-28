@@ -6,10 +6,10 @@ import { usePathname } from 'next/navigation';
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Services Hub', href: '/services' },
-  { name: 'Smog Check', href: '/services/smog-check' },
   { name: 'Tires & Wheels', href: '/services/tires' },
   { name: 'Auto Repair', href: '/services/auto-repair' },
+  { name: 'Smog Check', href: '/services/smog-check' },
+  { name: 'All Services', href: '/services' },
 ];
 
 export default function Navbar() {
@@ -17,7 +17,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 transition-all">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -27,11 +27,11 @@ export default function Navbar() {
             className="flex flex-col shrink-0 focus:outline-none group"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <span className="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-blue-400 transition-colors">
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
               DISCOUNT AUTO
             </span>
-            <span className="text-[10px] sm:text-xs font-mono tracking-widest text-blue-500 uppercase font-semibold -mt-1">
-              Smog & Tire • Oakland
+            <span className="text-[10px] sm:text-xs font-mono tracking-widest text-blue-600 uppercase font-semibold -mt-1">
+              Tires & Smog • Oakland
             </span>
           </Link>
 
@@ -45,8 +45,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all ${
                     isActive 
-                      ? 'bg-blue-600/10 text-blue-400 border border-blue-500/20' 
-                      : 'text-slate-300 hover:text-white hover:bg-slate-900/60'
+                      ? 'bg-blue-50 text-blue-700 border border-blue-100' 
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
                   {item.name}
@@ -55,19 +55,19 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* 3. Persistent Emergency / Call Action (Desktop & Tablet) */}
+          {/* 3. Persistent Call Action */}
           <div className="hidden sm:flex items-center gap-3">
             <div className="text-right hidden xl:block">
-              <span className="block text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+              <span className="block text-[10px] font-mono text-emerald-600 uppercase tracking-widest font-bold">
                 ✓ Drive-ups Welcome
               </span>
-              <span className="text-xs text-slate-400 font-medium">
+              <span className="text-xs text-slate-500 font-medium">
                 5443 Shattuck Ave.
               </span>
             </div>
             <a
               href="tel:5106552729"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/20 transition-all transform active:scale-95"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-600/20 transition-all transform active:scale-95"
             >
               <span>📞 (510) 655-2729</span>
             </a>
@@ -77,7 +77,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:hidden">
             <a
               href="tel:5106552729"
-              className="p-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold shadow-md shadow-blue-600/30 transition-all"
+              className="p-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-sm transition-all"
               aria-label="Call Garage"
             >
               📞
@@ -85,7 +85,7 @@ export default function Navbar() {
             
             <button
               type="button"
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 focus:outline-none transition-colors"
+              className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300 focus:outline-none transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
             >
@@ -104,9 +104,9 @@ export default function Navbar() {
 
       {/* ================= MOBILE DROPDOWN MENU ================= */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-3 pb-8 space-y-3 animate-fadeIn">
-          <div className="text-xs font-mono uppercase tracking-widest text-slate-500 px-3 pt-2">
-            Navigation Menu
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-8 space-y-3 shadow-lg">
+          <div className="text-xs font-mono uppercase tracking-widest text-slate-400 px-3 pt-2">
+            Navigation
           </div>
           
           <div className="space-y-1">
@@ -120,7 +120,7 @@ export default function Navbar() {
                   className={`block px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
                     isActive
                       ? 'bg-blue-600 text-white font-bold'
-                      : 'text-slate-200 hover:bg-slate-900'
+                      : 'text-slate-700 hover:bg-slate-50'
                   }`}
                 >
                   {item.name}
@@ -129,17 +129,14 @@ export default function Navbar() {
             })}
           </div>
 
-          <div className="pt-4 mt-4 border-t border-slate-800/80 space-y-3">
-            <div className="px-3 text-xs text-slate-400">
-              📍 <strong className="text-slate-200">Location:</strong> 5443 Shattuck Ave, Oakland
-            </div>
-            <div className="px-3 text-xs text-slate-400">
-              🕒 <strong className="text-slate-200">Hours:</strong> Mon-Fri 8:30-5:30 • Sat 8:30-4
+          <div className="pt-4 mt-4 border-t border-slate-100 space-y-3">
+            <div className="px-3 text-xs text-slate-500">
+              📍 <strong className="text-slate-900">Location:</strong> 5443 Shattuck Ave, Oakland
             </div>
             
             <a
               href="tel:5106552729"
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-lg shadow-lg shadow-blue-600/30"
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-lg shadow-md"
             >
               <span>Call Garage Now</span>
             </a>

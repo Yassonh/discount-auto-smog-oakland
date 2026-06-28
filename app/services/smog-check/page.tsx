@@ -59,48 +59,51 @@ const faqs = [
 
 export default function SmogCheckPage() {
   return (
-    <div className="bg-slate-950 min-h-screen text-slate-100 pb-20">
+    <div className="bg-white min-h-screen text-slate-900 pb-20">
       
       {/* 1. Page Hero */}
-      <div className="relative bg-gradient-to-b from-blue-950/40 via-slate-950 to-slate-950 pt-16 pb-12 border-b border-slate-800">
+      <div className="relative bg-slate-50 pt-16 pb-12 border-b border-slate-200">
+        {/* Subtle grid pattern for texture */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-60" />
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <Link href="/services" className="text-sm font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+            <Link href="/services" className="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
               &larr; All Services
             </Link>
-            <span className="text-slate-600">/</span>
-            <span className="text-xs uppercase font-mono tracking-widest px-2.5 py-1 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">
+            <span className="text-slate-300">/</span>
+            <span className="text-xs uppercase font-mono tracking-widest px-2.5 py-1 rounded bg-blue-50 text-blue-700 border border-blue-100">
               Official CA Station #5443
             </span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-none">
                 Oakland’s 15-Minute <br />
-                <span className="text-blue-500">Smog Check Station</span>
+                <span className="text-blue-600">Smog Check Station</span>
               </h1>
-              <p className="mt-4 text-lg text-slate-300 max-w-2xl">
+              <p className="mt-4 text-lg text-slate-600 max-w-2xl">
                 Official State of California Smog Testing for all makes, models, and years. Fast electronic DMV transmission so you can get your tags today.
               </p>
             </div>
 
             {/* Instant Action Box */}
-            <div className="lg:col-span-4 bg-slate-900 border-2 border-blue-600/40 rounded-2xl p-6 shadow-2xl shadow-blue-950">
-              <div className="text-xs font-bold uppercase tracking-wider text-blue-400 mb-1">Current Wait Time:</div>
-              <div className="text-3xl font-black text-emerald-400">~10 Mins</div>
-              <div className="text-xs text-slate-400 mt-1">Drive-ups prioritized • No appointment necessary</div>
+            <div className="lg:col-span-4 bg-white border border-slate-200 rounded-2xl p-6 shadow-xl">
+              <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">Current Wait Time:</div>
+              <div className="text-3xl font-black text-emerald-600">~10 Mins</div>
+              <div className="text-xs text-slate-500 mt-1">Drive-ups prioritized • No appointment necessary</div>
               
-              <hr className="border-slate-800 my-4" />
+              <hr className="border-slate-100 my-4" />
               
               <a 
                 href="tel:5106552729"
-                className="w-full block text-center py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg shadow-lg shadow-blue-600/30 transition-all"
+                className="w-full block text-center py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg shadow-lg shadow-blue-600/20 transition-all"
               >
                 Call (510) 655-2729
               </a>
-              <div className="text-center text-xs text-slate-400 mt-3">
+              <div className="text-center text-xs text-slate-500 mt-3">
                 📍 5443 Shattuck Ave, Oakland, CA
               </div>
             </div>
@@ -110,40 +113,40 @@ export default function SmogCheckPage() {
       </div>
 
       {/* 2. The "What to Bring" Alert banner */}
-      <div className="bg-blue-950/60 border-y border-blue-800/60 py-4 px-4 sm:px-6">
+      <div className="bg-blue-50 border-y border-blue-100 py-4 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
           <div className="flex items-center gap-3">
             <span className="text-2xl">📄</span>
             <div>
-              <strong className="text-white">Pro-Tip for fast service:</strong> Bring your DMV Renewal form (the page with the scannable barcodes).
+              <strong className="text-slate-900">Pro-Tip for fast service:</strong> Bring your DMV Renewal form (the page with the scannable barcodes).
             </div>
           </div>
-          <span className="text-blue-300 font-medium shrink-0">Lost it? We can pull your VIN manually.</span>
+          <span className="text-blue-700 font-medium shrink-0">Lost it? We can pull your VIN manually.</span>
         </div>
       </div>
 
       {/* 3. Smog Types Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="max-w-3xl mb-12">
-          <h2 className="text-3xl font-bold text-white tracking-tight">Every Smog Check Classification</h2>
-          <p className="text-slate-400 mt-2">Whether you're renewing a family Honda or registering an out-of-state F-250 Diesel, our Shattuck Avenue testing bays handle it all:</p>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Every Smog Check Classification</h2>
+          <p className="text-slate-600 mt-2">Whether you're renewing a family Honda or registering an out-of-state F-250 Diesel, our Shattuck Avenue testing bays handle it all:</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {smogTypes.map((s, idx) => (
-            <div key={idx} className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition-colors">
+            <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between hover:border-blue-200 hover:shadow-md transition-all group">
               <div>
                 <div className="flex flex-wrap gap-1.5 mb-3">
                   {s.tags.map((t, tidx) => (
-                    <span key={tidx} className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-slate-800 text-blue-400 border border-slate-700">
+                    <span key={tidx} className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-slate-50 text-slate-600 border border-slate-200">
                       {t}
                     </span>
                   ))}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{s.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{s.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{s.desc}</p>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-emerald-400">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-emerald-600">
                 <span>✓ Same-day DMV upload</span>
               </div>
             </div>
@@ -153,22 +156,22 @@ export default function SmogCheckPage() {
 
       {/* 4. The Check Engine Light Warning (High Trust Element) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-900 border-2 border-amber-500/40 rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-sm">
           <div className="absolute top-0 right-0 p-8 opacity-10 text-amber-500 text-8xl font-black select-none pointer-events-none">
             ⚠️
           </div>
           <div className="max-w-3xl relative z-10">
-            <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold uppercase tracking-wider">
               Mechanic Advisory
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mt-3">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-3">
               Is your Check Engine Light on right now?
             </h3>
-            <p className="mt-2 text-slate-300 leading-relaxed">
+            <p className="mt-2 text-slate-700 leading-relaxed">
               <strong>Do not pay anyone to smog test your car today.</strong> By California state regulations, any active Check Engine Light results in an instant, non-refundable failure. Bring your car to us first; our mechanics will run an ECU Engine Diagnostic to fix the underlying sensor before we put it on the smog machine.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <Link href="/services/auto-repair" className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-colors">
+              <Link href="/services/auto-repair" className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-sm transition-colors shadow-sm">
                 Learn about Engine Diagnostics &rarr;
               </Link>
             </div>
@@ -178,12 +181,12 @@ export default function SmogCheckPage() {
 
       {/* 5. FAQs / SEO Rich Snippets */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <h2 className="text-2xl font-bold text-center text-white mb-10">Frequently Asked Smog Questions</h2>
+        <h2 className="text-2xl font-bold text-center text-slate-900 mb-10">Frequently Asked Smog Questions</h2>
         <div className="space-y-6">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6">
-              <h4 className="text-lg font-bold text-blue-400">{faq.q}</h4>
-              <p className="text-slate-300 text-sm mt-2 leading-relaxed">{faq.a}</p>
+            <div key={idx} className="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+              <h4 className="text-lg font-bold text-blue-600">{faq.q}</h4>
+              <p className="text-slate-600 text-sm mt-2 leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
