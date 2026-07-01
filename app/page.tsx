@@ -198,12 +198,12 @@ export default function HomePage() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="font-bold text-slate-900">{rev.name}</span>
-                <a href={rev.url} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-blue-600 underline">
-                  Read on {rev.platform} &nearr;
-                </a>
-              </div>
-            </div>
+            <span className="font-bold text-slate-900">{rev.name}</span>
+            <a href={rev.url} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-blue-600 underline">
+              Read on {rev.platform} ↗
+            </a>
+          </div>
+                      </div>
           ))}
         </div>
       </section>
